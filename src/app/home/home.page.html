@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title size="large">
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" padding>
+  <h1>Lismore Flood Emergency</h1>
+
+  <ion-grid>
+    <ion-row class="row1">
+    </ion-row>
+    <ion-row class="row2">
+      <ion-col>
+          <ion-list>
+            <ion-item>
+              Flood Status: <a id="flooding"> Major Flooding </a>
+            </ion-item>
+            <!-- Assitance Status updates to "Requested" when user accesses request modal -->
+            <ion-item>
+              Assistance Request Status: <a id="assistance"> Not Requested </a>
+            </ion-item>
+          </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row3">
+      <ion-col>
+        Please enter your household details in the Household details section.
+      </ion-col>
+    </ion-row>
+    <ion-row></ion-row>
+    <ion-row class="row4">
+      <ion-col>
+
+        <!-- Beginning of list menu -->
+        <ion-list>
+
+          <ion-item  detail=false routerLink="/household">
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-icon slot="end" name="chevron-forward"></ion-icon>
+            Household Information
+          </ion-item>
+
+          <ion-item detail=false routerLink="/map">
+            <ion-icon slot="start" name="map"></ion-icon>
+            <ion-icon slot="end" name="chevron-forward"></ion-icon>
+            Map
+          </ion-item>
+
+          <ion-item  detail=false routerLink="/info">
+            <ion-icon slot="start" name="information-circle"></ion-icon>
+            <ion-icon slot="end" name="chevron-forward"></ion-icon>
+            Flood Information
+          </ion-item>
+
+          <ion-item detail=false routerLink="/request">
+            <ion-icon slot="start" name="help-buoy"></ion-icon>
+            <ion-icon slot="end" name="chevron-forward"></ion-icon>
+            Request Assistance
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

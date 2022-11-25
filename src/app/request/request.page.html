@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title size="small">Lismore Flood Emergency</ion-title>
+    <ion-button slot="start" color="light">
+      <ion-back-button></ion-back-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h1>Request Assistance</h1>
+    <ion-list>
+      <ion-item>
+        First Name
+      </ion-item>
+      <ion-item>
+        Last Name
+      </ion-item>
+      <ion-item>
+        Address
+      </ion-item>
+      <ion-item>
+        Date Of Birth
+      </ion-item>
+      <ion-item>
+        Phone Number
+      </ion-item>
+      <ion-item>
+        Emergency Contacts Phone Number
+      </ion-item>
+      <ion-item>
+        Mobility Imapaired
+      </ion-item>
+      <ion-item>
+        Pets
+      </ion-item>
+      <ion-item>Livestock
+      </ion-item>
+      <ion-img src="../../assets/PrototypeImage.jpg"></ion-img>
+      <ion-item>Comments:</ion-item>
+    </ion-list>
+    <!-- Information from list above will come from the household info page -->
+
+    <!-- Edit household button directs user back to household info page -->
+    <ion-button expand="block" routerLink="/household">
+      Edit Household Info</ion-button>
+
+      <!-- Request Assistance button opens modal -->
+    <ion-button color="success" expand="block" (click)="presentModal()">
+      Request Assistance
+    </ion-button>
+</ion-content>

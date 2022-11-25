@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Household-modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <!-- List of data to be added -->
+  <ion-list>
+    <ion-item>
+      <ion-input [(ngModel)]= "firstName" placeholder="First Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]= "lastName" placeholder="Last Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="address" placeholder="Address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date Of Birth</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="dob"></ion-datetime>
+
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="phone" placeholder="Phone Number" inputmode="tel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="emergContact" placeholder="Emergency Contacts Phone Number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Mobility Impaired</ion-label>
+      <ion-checkbox [(ngModel)]="mobImpaired" slow="start" checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pets</ion-label>
+      <ion-checkbox [(ngModel)]="pets" slow="start" checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Livestock</ion-label>
+      <ion-checkbox [(ngModel)]="livestock" slow="start" checked="true"></ion-checkbox>
+    </ion-item>
+
+    <!-- Button for adding an image -->
+    <ion-button>Add Image</ion-button>
+    <ion-item>
+      <ion-label>Comments:</ion-label>
+      <ion-textarea autogrow="true" [(ngModel)]="comments"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <!-- Button to save data -->
+    <ion-button color="success" expand="block" (click)="closeModal()">Save</ion-button>
+</ion-content>

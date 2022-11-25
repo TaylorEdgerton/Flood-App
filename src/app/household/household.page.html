@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title size="small">Lismore Flood Emergency</ion-title>
+    <ion-button slot="start" color="light">
+      <ion-back-button></ion-back-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Household Information</h1>
+<!-- to simplify a printList() function was used for ngIf-->
+<!-- If no data saved in array, print a no data message -->
+  <ion-item *ngIf="printList()==false">
+    <p>Click the button below to add a Household member</p>
+  </ion-item>
+
+  <!-- Div to contain the loop to loop through households array with an index of i -->
+    <div *ngFor = "let household of households, index as i">
+      <!-- Each item within the list is printed according to the ngIf-->
+    <ion-list>
+      <ion-list-header *ngIf = "printList()==true && household.firstName !=''">Household Member {{i}}</ion-list-header>
+      <ion-item *ngIf="printList()==true && household.firstName !=''">
+        First Name: <br>
+        {{household.firstName}}
+      </ion-item>
+      <ion-item *ngIf="printList()==true && household.lastName !=''">
+        Last Name: <br>{{household.lastName}}
+      </ion-item>
+      <ion-item *ngIf="printList()==true && household.address !=''">
+        Address: <br>{{household.address}}
+      </ion-item>
+      <ion-item *ngIf="printList()==true && household.dob !=''">
+        Date Of Birth: <br>{{household.dob}}
+      </ion-item>
+      <ion-item *ngIf="printList()==true && household.phone !=null">
+        Phone Number: <br>{{household.phone}}
+      </ion-item>
+      <ion-item *ngIf="printList()==true && household.emergContact !=null">
+        Emergency Contact Number: <br>{{household.emergContact}}
+      </ion-item>
+      <ion-item *ngIf="printList()==true && household.mobImpaired !=null">
+        <p *ngIf="household.mobImpaired == true">Mobility Impaired: YES</p>
+        <p *ngIf="household.mobImpaired != true">Mobility Impaired: NO</p>
+      </ion-item>
+      <ion-item *ngIf="printList()==true && household.pets !=null">
+        <p *ngIf="household.pets == true">Pets: YES</p>
+        <p *ngIf="household.pets != true ">Pets: NO</p>
+      </ion-item>
+      <ion-item *ngIf="printList()==true && household.livestock !=null">
+        <p *ngIf="household.livestock == true">livestock: YES</p>
+        <p *ngIf="household.livestock != true">livestock: NO</p>
+      </ion-item>
+      <ion-img *ngIf="printList()==true && household.firstName !=''" src="../../assets/PrototypeImage.jpg"></ion-img>
+      <ion-item *ngIf="printList()==true && household.firstName !=''">Comments: <br>{{household.comments}}</ion-item>
+    </ion-list>
+    <ion-button (click)="edit(i)" *ngIf="printList()==true && household.firstName !=''" expand="block" (click)="addHousehold()">
+      Edit
+    </ion-button>
+    <ion-button (click)="delete(i)" *ngIf="printList()==true && household.firstName !=''" color="danger" expand="block">
+      Delete
+    </ion-button>
+  </div>
+
+
+  <!-- buttons to Edit, Delete or add new data-->
+
+  <ion-button color="success" expand="block" (click)="addHousehold()">
+    Add
+  </ion-button>
+</ion-content>

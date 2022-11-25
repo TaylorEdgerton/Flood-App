@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title size="small">Lismore Flood Emergency</ion-title>
+    <ion-button slot="start" color="light">
+      <ion-back-button></ion-back-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h1>Map</h1>
+
+  <!-- Interactive map will overwrite image -->
+  <ion-item>
+    <ion-img src="../../assets/LismoreMap2.png"></ion-img>
+  </ion-item>
+
+  <!-- Longitude and Latitude will be automatically generated from GPS location -->
+  <ion-item>
+    Longitude:
+  </ion-item>
+  <ion-item>
+    Latitude:
+  </ion-item>
+
+  <!-- Request assistance button opens modal -->
+  <ion-button expand="block" routerLink="/request">Request Assistance</ion-button>
+</ion-content>
